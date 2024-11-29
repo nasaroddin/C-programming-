@@ -1,0 +1,30 @@
+/*
+AIM: C program to check a specified file exists or not
+Name: Nasaroddin Salim Kazi 
+UIN: 241A040
+DIV: A
+DEPTT.: AI&DS
+ROLL-NO: 33
+*/
+#include <stdio.h>
+int main() {
+ char filename[100];
+ FILE *file;
+ // Input the file name
+ printf("Enter the file name: ");
+ scanf("%s", filename);
+ // Try to open the file in read mode
+ file = fopen(filename, "r");
+ // Check if the file exists
+ if (file) {
+ printf("File exists.\n");
+ fclose(file);
+ } else {
+ printf("File does not exist.\n");
+ }
+ return 0;
+}
+/* OUTPUT:
+Enter the file name: assignment2_q5.c
+File exists.
+*/

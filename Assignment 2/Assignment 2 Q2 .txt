@@ -1,0 +1,33 @@
+/*
+AIM: Write a program to accept a string, copy it into another string
+ and display this new string.
+Name: Nasaroddin Salim Kazi 
+UIN: 241A040
+DIV: A
+DEPT.: AI&DS
+ROLL-NO: 33
+*/
+#include <stdio.h>
+#include <string.h>
+int main() {
+ char original_string[100];
+ char copied_string[100];
+ // Input the original string
+ printf("Enter a string: ");
+ fgets(original_string, sizeof(original_string), stdin);
+ // Remove newline character if present
+ size_t len = strlen(original_string);
+ if (len > 0 && original_string[len - 1] == '\n') {
+ original_string[len - 1] = '\0';
+ }
+ // Copy the original string to the copied string
+ strcpy(copied_string, original_string);
+ // Display the copied string
+ printf("The new string is: %s\n", copied_string);
+ return 0;
+}
+/* OUTPUT:
+Enter a string
+Hello, how are you?
+The new string is Hello, how are you?
+*/

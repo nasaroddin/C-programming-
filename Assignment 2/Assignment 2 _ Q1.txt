@@ -1,0 +1,54 @@
+/*
+AIM: Write a program to find an element in an array and display
+ the index of the element using a function. OR write a program to
+ implement sequential search algorithm.
+Name: Nasaroddin Salim Kazi 
+UIN: 241A040
+DIV: A
+DEPTT.: AI&DS
+ROLL-NO: 33
+*/
+#include <stdio.h>
+// Function to perform sequential search
+int sequential_search(int arr[], int n, int key) {
+ for (int i = 0; i < n; i++) {
+ if (arr[i] == key) {
+ return i; // Return the index if the key is found
+ }
+ }
+ return -1; // Return -1 if the key is not found
+}
+int main() {
+ int n, key, index;
+ // Input the number of elements
+ printf("Enter the number of elements: ");
+ scanf("%d", &n);
+ int arr[n];
+ // Input the array elements
+ for (int i = 0; i < n; i++) {
+ printf("Enter a value: ");
+ scanf("%d", &arr[i]);
+ }
+ // Input the element to be searched
+ printf("Enter the element to be searched: ");
+ scanf("%d", &key);
+ // Perform the search
+ index = sequential_search(arr, n, key);
+ // Output the result
+ if (index != -1) {
+ printf("The element %d is found at index %d\n", key, index);
+ } else {
+ printf("The element %d is not found in the array\n", key);
+ }
+ return 0;
+}
+/* OUTPUT:
+Enter the number of elements:5
+Enter a value:23
+Enter a value:56
+Enter a value:774
+Enter a value:22
+Enter a value:90
+Enter the element to be searched:22
+The element 22 is found in the index 3
+*/
